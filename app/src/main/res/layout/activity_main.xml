@@ -6,13 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/open_second"
+    <Button
+        android:id="@+id/foreground_crash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World"
+        android:text="Crash in foreground"
+        android:onClick="crashForeground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/background_crash"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/background_crash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crash in background"
+        android:onClick="crashBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/foreground_crash"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

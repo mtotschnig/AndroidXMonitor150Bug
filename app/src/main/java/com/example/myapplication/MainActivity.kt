@@ -18,6 +18,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+    }
+
+    fun crashForeground(view: View) {
+        lifecycleScope.launch(Dispatchers.Main) {
+            throw RuntimeException()
+        }
+    }
+    fun crashBackground(view: View) {
         lifecycleScope.launch(Dispatchers.Default) {
             throw RuntimeException()
         }
